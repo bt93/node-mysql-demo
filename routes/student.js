@@ -26,5 +26,21 @@ module.exports = {
 				res.redirect('/');
 			}
 		});
+	},
+
+	editStudentPage: (req, res) => {
+		let studentID = req.params.id;
+		let query = `SELECT * FROM students WHERE id = ${studentID};`
+
+		db.query(query, (err, result) => {
+			if (err) {
+				return res.status(500).send(err);
+			}
+			res.render('edit-student.ejs', {
+				title: 'Student Database | Edit Student',
+				student: result[0],
+				message: ''
+			});
+		});
 	}
 }

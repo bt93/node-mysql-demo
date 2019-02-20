@@ -1,6 +1,7 @@
 const express = require('express');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
+const ejsLint = require('ejs-lint');
 const app = express();
 
 const {getHomePage} = require('./routes/index');
@@ -36,9 +37,7 @@ app.use(bodyParser.json()); // parse form data client
 // set routes
 app.get('/', getHomePage);
 app.get('/add', addStudentPage);
-app.get('/edit/:id', (req, res) => {
-	console.log(req.body);
-});
+app.get('/edit/:id', editStudentPage);
 app.post('/add', addStudent);
 
 

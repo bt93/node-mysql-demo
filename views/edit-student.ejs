@@ -1,9 +1,9 @@
 <% include partials/header.ejs %>
 <div class="container">
-	<% if (message) %>
+	<% if (message) {%>
 		<p class="text-center text-danger"><%= message %></p>
     <% } %>
-    <% if (student) %>
+    <% if (student) {%>
 			<h1>Add New Student</h1>
 			<form action="" method="post">
 				<div class="form-row">
@@ -36,10 +36,10 @@
 				      		<option selected disabled>Choose Advisor</option>
 				      		<option value="001">001</option>
 				      		<option value="002">002</option>
-				      		<option value="003">003</option>
+				      		<option value="003">003</option{>
 				      		<option value="004">004</option>
 				      		<option value="005">005</option>
-				      		<option value="006">006</option>
+				      		<option value="006">006</option>{
 				      		<option value="007">007</option>
 				      	</select>
 				    </div>
