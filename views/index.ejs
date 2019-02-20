@@ -1,0 +1,42 @@
+	<% include partials/header.ejs %>
+	<div class="table-wrapper">
+		<% if (students.length > 0) {%>
+		<table class="table">
+		  <thead class="thead-dark">
+		    <tr>
+		      <th scope="col">Student ID</th>
+		      <th scope="col">First Name</th>
+		      <th scope="col">Last Name</th>
+		      <th scope="col">Gender</th>
+		      <th scope="col">Major</th>
+		      <th scope="col">Adviser ID</th>
+		      <th scope="col">Year Started</th>
+		      <th scope="col">Graduation Year</th>
+		      <th scope="col"></th> <!-- Left Intentionally Blank -->
+		    </tr>
+		  </thead>
+		  <tbody>
+		  <% students.forEach((student, index) => { %>
+		    <tr>
+		      <th scope="row"><%= student.id %></th>
+		      <td><%= student.first_name %></td>
+		      <td><%= student.last_name %></td>
+		      <td><%= student.gender %></td>
+		      <td><%= student.major %></td>
+		      <td>00<%= student.ad_id %></td>
+		      <td><%= student.year_start %></td>
+		      <td><%= student.year_end %></td>
+		      <td>
+		      	<a href="/edit/<%= student.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Edit</a>
+            	<a href="/delete/<%= student.id %>" class="btn btn-sm btn-danger">Delete</a>
+		      </td>
+		    </tr>
+		    <% }) %>
+		  </tbody>
+		</table>
+		<%} else {%>
+		<p>There are no students in the database. <a href="/add">Click here to add new players</a>.</p>
+		<% } %>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,84 @@
+<% include partials/header.ejs %>
+<div class="container">
+	<% if (message) %>
+		<p class="text-center text-danger"><%= message %></p>
+    <% } %>
+    <% if (student) %>
+			<h1>Add New Student</h1>
+			<form action="" method="post">
+				<div class="form-row">
+				    <div class="col">
+				    	<label for="first-name">First Name</label>
+				    	<input type="text" class="form-control" name="first_name" id="first-name" required>
+				    </div>
+				    <div class="col">
+				   		<label for="last-name">Last Name</label>
+				    	<input type="text" class="form-control" name="last_name" id="last-name" required>
+				    </div>
+				    <div class="col">
+				   		<label for="gender">Gender</label>
+				    	<select type="text" class="form-control" name="gender" id="gender" required>
+				    		<option selected disabled>Choose Gender</option>
+				    		<option value="male">Male</option>
+				    		<option value="female">Female</option>
+				    		<option value="other">Other</option>
+				    	</select>
+				    </div>
+				</div>
+				<div class="form-row">
+				    	<div class="col">
+				    	<label for="major">Major</label>
+				      	<input type="text" class="form-control" name="major" id="major" required>
+				    </div>
+				    <div class="col">
+				    	<label for="ad-id">Advisor ID</label>
+				      	<select type="text" class="form-control" name="ad_id" id="ad-id" required>
+				      		<option selected disabled>Choose Advisor</option>
+				      		<option value="001">001</option>
+				      		<option value="002">002</option>
+				      		<option value="003">003</option>
+				      		<option value="004">004</option>
+				      		<option value="005">005</option>
+				      		<option value="006">006</option>
+				      		<option value="007">007</option>
+				      	</select>
+				    </div>
+				</div>
+				<div class="form-row">
+					<div class="col">
+						<label for="year-start">Year Started</label>
+						<select type="text" class="form-control" name="year_start" id="year-start" required>
+							<option selected disabled>Choose Year</option>
+							<option value="2012">2012</option>
+							<option value="2013">2013</option>
+							<option value="2014">2014</option>
+							<option value="2015">2015</option>
+							<option value="2016">2016</option>
+							<option value="2017">2017</option>
+							<option value="2018">2018</option>
+							<option value="2019">2019</option>
+						</select>
+					</div>
+					<div class="col">
+						<label for="year-end">Graduation Year</label>
+						<select type="text" class="form-control" name="year_end" id="year-end" required>
+							<option selected disabled>Choose Year</option>
+							<option value="2019">2019</option>
+							<option value="2020">2020</option>
+							<option value="2021">2021</option>
+							<option value="2022">2022</option>
+							<option value="2023">2023</option>
+							<option value="2024">2024</option>
+							<option value="2025">2025</option>
+							<option value="2026">2026</option>
+						</select>
+					</div>
+				</div>
+				<button type="submit" class="btn btn-primary float-right">Add Student</button>
+			</form>
+			<% } else { %>
+				<p>This student is not in our records. Add student <a href="/add">here</a>.</p>
+			<% } %>
+		</div>
+	</body>
+</html>
