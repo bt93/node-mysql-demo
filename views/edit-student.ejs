@@ -4,21 +4,21 @@
 		<p class="text-center text-danger"><%= message %></p>
     <% } %>
     <% if (student) {%>
-			<h1>Add New Student</h1>
+			<h1>Edit Student</h1>
+			<h2><%= student.first_name %> <%= student.last_name %></h2>
 			<form action="" method="post">
 				<div class="form-row">
 				    <div class="col">
 				    	<label for="first-name">First Name</label>
-				    	<input type="text" class="form-control" name="first_name" id="first-name" required>
+				    	<input type="text" class="form-control" name="first_name" id="first-name" value="<%=student.first_name%>" required>
 				    </div>
 				    <div class="col">
 				   		<label for="last-name">Last Name</label>
-				    	<input type="text" class="form-control" name="last_name" id="last-name" required>
+				    	<input type="text" class="form-control" name="last_name" id="last-name" value="<%=student.last_name%>" required>
 				    </div>
 				    <div class="col">
 				   		<label for="gender">Gender</label>
-				    	<select type="text" class="form-control" name="gender" id="gender" required>
-				    		<option selected disabled>Choose Gender</option>
+				    	<select type="text" class="form-control" name="gender" id="gender" value="<%=student.gender%>" required>
 				    		<option value="male">Male</option>
 				    		<option value="female">Female</option>
 				    		<option value="other">Other</option>
@@ -28,12 +28,11 @@
 				<div class="form-row">
 				    	<div class="col">
 				    	<label for="major">Major</label>
-				      	<input type="text" class="form-control" name="major" id="major" required>
+				      	<input type="text" class="form-control" name="major" id="major" value="<%=student.major%>"  required>
 				    </div>
 				    <div class="col">
 				    	<label for="ad-id">Advisor ID</label>
-				      	<select type="text" class="form-control" name="ad_id" id="ad-id" required>
-				      		<option selected disabled>Choose Advisor</option>
+				      	<select type="text" class="form-control" name="ad_id" id="ad-id" value="<%=student.ad_id%>" required>
 				      		<option value="001">001</option>
 				      		<option value="002">002</option>
 				      		<option value="003">003</option{>
@@ -47,8 +46,7 @@
 				<div class="form-row">
 					<div class="col">
 						<label for="year-start">Year Started</label>
-						<select type="text" class="form-control" name="year_start" id="year-start" required>
-							<option selected disabled>Choose Year</option>
+						<select type="text" class="form-control" name="year_start" id="year-start" value="<%=student.year_start%>" required>
 							<option value="2012">2012</option>
 							<option value="2013">2013</option>
 							<option value="2014">2014</option>
@@ -61,8 +59,7 @@
 					</div>
 					<div class="col">
 						<label for="year-end">Graduation Year</label>
-						<select type="text" class="form-control" name="year_end" id="year-end" required>
-							<option selected disabled>Choose Year</option>
+						<select type="text" class="form-control" name="year_end" id="year-end" value="<%=student.year_end%>" required>
 							<option value="2019">2019</option>
 							<option value="2020">2020</option>
 							<option value="2021">2021</option>
@@ -74,7 +71,7 @@
 						</select>
 					</div>
 				</div>
-				<button type="submit" class="btn btn-primary float-right">Add Student</button>
+				<button type="submit" class="btn btn-primary float-right">Edit Student</button>
 			</form>
 			<% } else { %>
 				<p>This student is not in our records. Add student <a href="/add">here</a>.</p>

@@ -38,6 +38,8 @@ app.use(bodyParser.json()); // parse form data client
 app.get('/', getHomePage);
 app.get('/add', addStudentPage);
 app.get('/edit/:id', editStudentPage);
+app.get('/delete/:id', deleteStudent);
+app.post('/edit/:id', editStudent);
 app.post('/add', addStudent);
 
 
