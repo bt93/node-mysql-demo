@@ -16,8 +16,8 @@ module.exports = {
 		let yearStart = req.body.year_start;
 		let yearEnd = req.body.year_end;
 
-		let query = "INSERT INTO students (first_name, last_name, gender, major, ad_id, year_start, year_end) " + 
-		"VALUES ('" + firstName + "', '" + lastName + "', '" + gender + "', '" + major + "', " + adviserID + ", " + yearStart + ", " + yearEnd + ");";
+		let query = `INSERT INTO students (first_name, last_name, gender, major, ad_id, year_start, year_end) 
+		VALUES ('${firstName}', '${lastName}', '${gender}', '${major}', ${adviserID}, ${yearStart}, ${yearEnd});`;
 
 		db.query(query, (err, result) => {
 			if (err) {
